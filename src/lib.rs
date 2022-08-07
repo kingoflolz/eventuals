@@ -12,5 +12,5 @@ pub trait IntoReader {
     fn into_reader(self) -> EventualReader<Self::Output>;
 }
 
-pub trait Value: 'static + Send + Clone + Eq {}
-impl<T> Value for T where T: 'static + Send + Clone + Eq {}
+pub trait Value: 'static + Send + Clone + PartialEq {}
+impl<T> Value for T where T: 'static + Send + Clone + PartialEq {}
